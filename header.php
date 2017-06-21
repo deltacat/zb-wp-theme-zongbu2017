@@ -3,7 +3,19 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    主页
+    <?php if ( is_home() ) {
+      bloginfo('name'); echo " - "; bloginfo('description');
+    } elseif ( is_category() ) {
+      single_cat_title(); echo " - "; bloginfo('name');
+    } elseif (is_single() || is_page() ) {
+      single_post_title();
+    } elseif (is_search() ) {
+      echo "搜索结果"; echo " - "; bloginfo('name');
+    } elseif (is_404() ) {
+      echo '页面未找到!';
+    } else {
+      wp_title('',true);
+    } ?>
   </title>
   <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
   <script src="http://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.js" type="text/javascript"></script>

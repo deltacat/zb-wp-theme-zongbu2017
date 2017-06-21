@@ -1,6 +1,19 @@
 <?PHP
 // This theme uses wp_nav_menu() in one location.
 register_nav_menus();
+//获取第一张图片
+function catch_the_image() {
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches [1] [0];
+    if(empty($first_img)){  
+        $first_img = bloginfo('template_url'). '/images/default-thumb.jpg'; 
+    } 
+    return $first_img;
+}
 
 define('SETTING_ID_BEIAN_ICP', 'zh_cn_l10n_icp_num');
 define('SETTING_ID_BEIAN_GONGAN', 'zh_cn_l10n_gongan_num');

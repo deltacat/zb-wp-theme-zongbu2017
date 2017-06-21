@@ -31,26 +31,28 @@
   <div class="bubble"></div>
 </div>
 <div class="zb-service-detail">
+  <?php  
+    $args = array(  
+      'cat' => 3,   // 分类ID  
+      'posts_per_page' => 3, // 显示篇数  
+    );  
+    query_posts($args);  
+    if(have_posts()) : $count=0;while (have_posts()) : the_post();  
+  ?>
   <div class="zb-service-item">
-    <div class="zb-service-item-logo back-black"></div>
-    <div class="zb-service-item-title">移动应用开发</div>
-    <div class="zb-service-item-content">宗布科技拥有一支多年从事移动应用开发的团队，可为客户提供高质量的ios和Android应用。与阿里云，网易云深度合作，提供稳定……</div>
-    <div class="zb-service-item-bottom back-black"></div>
+    <div class="zb-service-item-logo <?php if ($count == 1) {echo 'back-orange';}else {echo 'back-black';} ?>"></div>
+    <div class="zb-service-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+    <div class="zb-service-item-content">
+      <?php if (has_excerpt()) {  
+          echo $description = get_the_excerpt(); //文章编辑中的摘要  
+        }else {  
+          echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 105,"……"); //文章编辑中若无摘要，自定截取文章内容字数做为摘要  
+        } 
+      ?>
+    </div>
+    <div class="zb-service-item-bottom <?php if ($count == 1) {echo 'back-orange';}else {echo 'back-black';} ?>"></div>
   </div>
-  <div class="zb-service-item">
-    <div class="zb-service-item-logo back-orange"></div>
-    <div class="zb-service-item-title">社群系统定制</div>
-    <div class="zb-service-item-content">宗布科技自主开发社群系统框架，整个产品包括在线论坛，移动App，微信内嵌功能页等。
-后端基于知名云服务供应商的强大运算……</div>
-    <div class="zb-service-item-bottom back-orange"></div>
-  </div>
-  <div class="zb-service-item">
-    <div class="zb-service-item-logo back-black"></div>
-    <div class="zb-service-item-title">移动应用开发</div>
-    <div class="zb-service-item-content">网站开发包括PC网站，手机网站，微信公众号内嵌功能页及微网站／微应用。
-涵盖企业门户网站，应用网站，功能……</div>
-    <div class="zb-service-item-bottom back-black"></div>
-  </div>
+  <?php  $count++;endwhile; endif; wp_reset_query(); ?>
 </div>
 
 <!-- 业务内容 -->
@@ -71,24 +73,26 @@
     <div class="zb-strength-content-bottom back-orange"></div>
   </div>
   <div class="zb-strength-detail">
+    <?php  
+      $args = array(  
+        'cat' => 4,   // 分类ID  
+        'posts_per_page' => 4, // 显示篇数  
+      );  
+      query_posts($args);  
+      if(have_posts()) : while (have_posts()) : the_post();  
+    ?>
     <div class="zb-strength-detail-item">
-      <div class="zb-strength-item-title" style="background-image:url(<?php bloginfo('template_url')?>/assets/img/strength_item.png);">MVP体验</div>
-      <div class="zb-strength-item-content">为客户提供沉浸式体验，顾问式服务。从产品的想法第一次提出即开始深度分析产品需求，设计原型，选择系统架构、交互设计，最终提交高质量产品并迅速上线。</div>
+      <div class="zb-strength-item-title" style="background-image:url(<?php bloginfo('template_url')?>/assets/img/strength_item.png);"><?php the_title(); ?></div>
+      <div class="zb-strength-item-content">
+        <?php if (has_excerpt()) {  
+            echo $description = get_the_excerpt(); //文章编辑中的摘要  
+          }else {  
+            echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 200,"……"); //文章编辑中若无摘要，自定截取文章内容字数做为摘要  
+          } 
+        ?>
+      </div>
     </div>
-    <div class="zb-strength-detail-item">
-      <div class="zb-strength-item-title" style="background-image:url(<?php bloginfo('template_url')?>/assets/img/strength_item.png);">专业服务</div>
-      <div class="zb-strength-item-content">我们不仅是软件开发技术的专家，同时我们的团队的项目经理均具有国际项目管理资格认证（PMP）。
-
-我们对于项目进度掌握，风险识别和应急处理均有成熟的经验。确保项目如期高质量交付。</div>
-    </div>
-    <div class="zb-strength-detail-item">
-      <div class="zb-strength-item-title" style="background-image:url(<?php bloginfo('template_url')?>/assets/img/strength_item.png);">深入研发</div>
-      <div class="zb-strength-item-content">我们的梦想就是成为优秀的技术供应商。我们致力于研究软件开发最新技术，努力参与到前沿的软件技术学习与革新。我们并非单纯的项目外包，我们有强力的研发团队不断改进自有框架。</div>
-    </div>
-    <div class="zb-strength-detail-item">
-      <div class="zb-strength-item-title" style="background-image:url(<?php bloginfo('template_url')?>/assets/img/strength_item.png);">人才梯队</div>
-      <div class="zb-strength-item-content">为自己也为客户培养输出高素质的技术人才，形成合理人才梯队。我们甚至可以同时输出软件产品和已与产品深度磨合的技术团队。</div>
-    </div>
+    <?php endwhile; endif; wp_reset_query(); ?>
   </div>
 </div>
 
@@ -147,21 +151,20 @@
     <div class="zb-article-hditem-content">这里有最新的与科技有关的趣味知识和精彩干货，你会了解一个更不一样的宗布。</div>
     <div class="zb-article-hditem-more"><a href="#">查看更多</a></div>
   </div>
+  <?php  
+    $args = array(  
+      'cat' => 5,   // 分类ID  
+      'posts_per_page' => 3, // 显示篇数  
+    );  
+    query_posts($args);  
+    if(have_posts()) : while (have_posts()) : the_post();  
+  ?>
   <div class="zb-article-item">
-    <div class="zb-article-item-img"><img src="<?php bloginfo('template_url')?>/assets/img/plan.png" width="100%"></div>
-    <div class="zb-article-item-content">在阿里云建设一个企业网站</div>
+    <div class="zb-article-item-img"><img src="<?php echo catch_the_image() ?>" width="100%"></div>
+    <div class="zb-article-item-content"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
     <div class="zb-article-item-btn"><a href="#">技术专栏</a></div>
   </div>
-  <div class="zb-article-item">
-    <div class="zb-article-item-img"><img src="<?php bloginfo('template_url')?>/assets/img/plan.png" width="100%"></div>
-    <div class="zb-article-item-content">在阿里云建设一个企业网站</div>
-    <div class="zb-article-item-btn"><a href="#">技术专栏</a></div>
-  </div>
-  <div class="zb-article-item">
-    <div class="zb-article-item-img"><img src="<?php bloginfo('template_url')?>/assets/img/plan.png" width="100%"></div>
-    <div class="zb-article-item-content">在阿里云建设一个企业网站</div>
-    <div class="zb-article-item-btn"><a href="#">技术专栏</a></div>
-  </div>
+  <?php endwhile; endif; wp_reset_query(); ?>
 </div>
 
 <!-- 联系我们 -->
