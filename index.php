@@ -173,13 +173,14 @@
     联系我们
   </div>
   <div class="zb-contact-form">
+  <form id="commentform" name="commentform" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
     <div class="zb-contact-form-group">
       <label>您的名字（必填）</label>
-      <input type="text" name="">
+      <input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="23" tabindex="2"/>
     </div>
     <div class="zb-contact-form-group">
       <label>您的邮箱（必填）</label>
-      <input type="text" name="">
+      <input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="23" tabindex="2"/>
     </div>
     <div class="zb-contact-form-group">
       <label>主题</label>
@@ -187,15 +188,19 @@
     </div>
     <div class="zb-contact-form-group">
       <label>您的留言</label>
-      <textarea></textarea>
+      <textarea id="message comment" name="comment" tabindex="4"></textarea>
     </div>
     <div class="zb-contact-form-group">
       <label>为避免垃圾邮件，请回答问题：G20在哪召开？</label>
       <input type="text" name="">
     </div>
     <div class="zb-contact-form-group">
-      <a class="zb-contact-send" href="#">立即发送</a>
+      <a class="zb-contact-send" href="javascript:void(0);" onClick="Javascript:document.forms['commentform'].submit()">立即发送</a>
     </div>
+    <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID">
+    <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+    <?php do_action('comment_form', $post->ID); ?>
+  </form>
   </div>
   <div class="zb-code">
     <div class="zb-code-content">扫描二维码关注我们的公众号随时获取最新信息。您可以在此处留言。也可以直接通过邮件把您的需求、商业计划书发送至下面的邮箱。我们会尽快处理。</div>
