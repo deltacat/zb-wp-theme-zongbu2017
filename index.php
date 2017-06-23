@@ -2,8 +2,8 @@
 <!-- 轮播器 -->
 <div id="hero" class="carousel slide first-carousel">
   <div class="zb-hero-content">
-    <div class="zb-title">杭州宗布科技有限公司</div>
-    <div class="zb-description">让您感受专业优质的软件技术服务，为您提供专业的技术支持。</div>
+    <div class="zb-title"><?php bloginfo('name'); ?></div>
+    <div class="zb-description"><?php bloginfo('description'); ?></div>
     <div class="zb-hero-button-group">
       <a href="#" class="zb-hero-button zb-service-btn">我们的服务</a>
       <a href="#" class="zb-hero-button zb-connact-btn">立刻联系</a>
