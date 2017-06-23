@@ -24,6 +24,7 @@
   <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="<?php bloginfo('template_url')?>/style.css" rel="stylesheet">
+  <link id="favicon" href="<?php bloginfo('template_url')?>/assets/img/logo_w.png" rel="icon"/>
 </head>
   <body>
     <div class="container">

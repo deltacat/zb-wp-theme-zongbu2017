@@ -672,7 +672,25 @@ a:visited {
     margin: 40px 0 0 0;
   }
   .zb-service-detail {
-    padding: 40px 0;
+    padding: 40px 15px;
+  }
+  .zb-case-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  .zb-strength-content {
+    margin-left: 0;
+    padding: 20px 15px;
+    width: 100%;
+  }
+  .zb-strength-detail-item {
+    float: none;
+    padding: 0 15px;
+    margin-left: 0;
+    width: 100%;
+  }
+  .zb-strength-detail-item + .zb-strength-detail-item {
+    margin-left: 2%;
   }
   .zb-introduction-main {
     width: 100%;
@@ -684,6 +702,39 @@ a:visited {
   .zb-introduction-main-content {
     margin-top: 20px;
   }
+  .zb-partner-show {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 15px 10px 15px;
+    margin-left: 0;
+    margin-top: 0;
+    border-bottom: 1px #9b9b9b dashed;
+  }
+  .zb-partner-show-img {
+    width: 100%;
+    float: none;
+    padding-bottom: 20px;
+  }
+  .zb-partner-show-main {
+    padding-left: 0;
+    width: 100%;
+    float: none;
+  }
+  .zb-partner-show-title {
+    text-align: center;
+  }
+  .zb-partner-show-bottom {
+    margin: 10px auto;
+  }
+  .zb-partner-show-content {
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .zb-partner-icons {
+    width: 100%;
+    margin-left: 0;
+    padding-bottom: 10px;
+  }
   .zb-article {
     padding: 20px 50px;
   }
@@ -694,17 +745,11 @@ a:visited {
     margin-top: 0;
   }
   .zb-article-item {
-    width: 33%;
+    width: 100%;
     margin-top: 20px;
   }
-  .zb-article-item-content {
-    float: none;
-  }
   .zb-article-item-btn {
-    text-align: center;
-  }
-  .zb-article-item-btn a {
-    float: none;
+    text-align: right;
   }
   .zb-contact {
     padding: 20px 20px;
@@ -716,5 +761,27 @@ a:visited {
   .zb-code {
     width: 100%;
     padding: 20px 20px;
+  }
+  .zb-info {
+    padding: 10px 0;
+  }
+  .zb-info-introduce {
+    width: 100%;
+    float: none;
+    padding: 0 15px;
+  }
+  .zb-info-main {
+    width: 100%;
+    float: none;
+    padding: 20px 0;
+  }
+  .zb-info-main-item {
+    width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+  .zb-info-main-head {
+    padding: 0;
   }
 }
