@@ -784,4 +784,12 @@ a:visited {
   .zb-info-main-head {
     padding: 0;
   }
+  .zb-footer-copy {
+    float: none;
+    margin: 0 auto;
+  }
+  .zb-footer-icp {
+    float: none;
+    margin: 10px auto;
+  }
 }
