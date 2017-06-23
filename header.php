@@ -18,7 +18,6 @@
     } ?>
   </title>
   <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
-  <script src="http://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.js" type="text/javascript"></script>
   <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
   <script src="<?php bloginfo('template_url')?>/assets/js/theme.js" type="text/javascript"></script>
   <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
